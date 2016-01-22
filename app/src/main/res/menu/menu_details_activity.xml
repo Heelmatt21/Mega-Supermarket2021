@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="sr.unasat.login.login.DetailsActivity">
+    <item
+        android:id="@+id/logoutUser"
+        android:orderInCategory="100"
+        android:title="@string/logoutUser"
+        app:showAsAction="never" />
+
+</menu>

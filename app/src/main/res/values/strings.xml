@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ExampleApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="username">Gebruikersnaam</string>
+    <string name="password">Wachtwoord</string>
+    <string name="title_activity_details">Details</string>
+    <string name="homeScreen">Home</string>
+    <string name="logoutBtnText">Logout</string>
+    <string name="logoutUser">Log Uit</string>
+</resources>
