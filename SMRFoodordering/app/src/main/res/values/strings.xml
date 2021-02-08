@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SMR Foodordering</string>
+    <string-array name="SMR_array">XML</string-array>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "SMRFoodordering">SMRFood.com - Dropdown</string>
+    <string-array name = "SMR_array">
+        <item>Regular Fries</item>
+        <item>Cajun Fries</item>
+        <item>Cassave Fries</item>
+        <item>Banana Fries</item>
+    </string-array>
+</resources>
