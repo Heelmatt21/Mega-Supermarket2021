@@ -2,12 +2,16 @@ package sr.unasat.megasupermarket;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import sr.unasat.megasupermarket.menu.ContactActivity;
+import sr.unasat.megasupermarket.menu.ProfileActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,14 +21,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-//Log out code
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_logout, menu);
+        inflater.inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
+//Log out, profile, contact code
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -32,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
             logout();
             Toast.makeText(this,"You're logged out", Toast.LENGTH_LONG).show();
             return true;
+        }
+        int id1 = item.getItemId();
+        if (id1 == R.id.profile) {
+            profile();
+        }
+        int id2 = item.getItemId();
+        if (id2 == R.id.contact) {
+            contact();
         }
 
         return super.onOptionsItemSelected(item);
@@ -43,5 +56,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+    private void profile() {
+        Intent intent1 = new Intent(MainActivity.this, ProfileActivity.class);
+        startActivity(intent1);
+    }
+    private void contact() {
+        Intent intent2 = new Intent(MainActivity.this, ContactActivity.class);
+        startActivity(intent2);
+    }
+
 
 }
