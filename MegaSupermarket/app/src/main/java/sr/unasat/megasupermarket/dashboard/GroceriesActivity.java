@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import sr.unasat.megasupermarket.LoginActivity;
+import sr.unasat.megasupermarket.MainActivity;
 import sr.unasat.megasupermarket.R;
 import sr.unasat.megasupermarket.menu.ContactActivity;
 import sr.unasat.megasupermarket.menu.ProfileActivity;
@@ -33,6 +34,9 @@ public class GroceriesActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.homeBtn:
+                onHome();
+                break;
             case R.id.logoutBtn:
                 onLogout();
                 break;
@@ -47,6 +51,10 @@ public class GroceriesActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void onHome() {
+        Intent intent = new Intent(GroceriesActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
     private void onLogout() {
         Intent intent = new Intent(GroceriesActivity.this, LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
