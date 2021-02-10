@@ -8,18 +8,54 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
+import sr.unasat.megasupermarket.dashboard.BeveragesActivity;
+import sr.unasat.megasupermarket.dashboard.CartActivity;
+import sr.unasat.megasupermarket.dashboard.GroceriesActivity;
 import sr.unasat.megasupermarket.menu.ContactActivity;
 import sr.unasat.megasupermarket.menu.ProfileActivity;
 
 public class MainActivity extends AppCompatActivity {
-
+private ImageButton Cart;
+private ImageButton Groceries;
+private ImageButton Beverages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Cart = (ImageButton)findViewById(R.id.cart_button);
+        Groceries = (ImageButton)findViewById(R.id.groceries_button);
+        Beverages = (ImageButton)findViewById(R.id.beverage_button);
+//Cart Button
+        Cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 = new Intent(MainActivity.this, CartActivity.class);
+                startActivity(intent3);
+            }
+        });
+//Groceries Button
+        Groceries.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent4 = new Intent(MainActivity.this, GroceriesActivity.class);
+                startActivity(intent4);
+            }
+        });
+//Beverages Button
+        Beverages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent5 = new Intent(MainActivity.this, BeveragesActivity.class);
+                startActivity(intent5);
+            }
+        });
     }
 
     @Override
@@ -27,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
+
     }
 
 //Log out, profile, contact code
@@ -64,6 +101,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent2 = new Intent(MainActivity.this, ContactActivity.class);
         startActivity(intent2);
     }
+
+
+
+
 
 
 }
