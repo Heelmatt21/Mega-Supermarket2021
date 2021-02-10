@@ -29,42 +29,37 @@ public class GroceriesActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
 
     }
+    //Log out, profile, contact code
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.logout) {
-            logout();
-
-            Toast.makeText(this, "You're logged out", Toast.LENGTH_LONG).show();
-            return true;
-        }
-        int id1 = item.getItemId();
-        if (id1 == R.id.profile) {
-            profile();
-        }
-        int id2 = item.getItemId();
-        if (id2 == R.id.contact) {
-            contact();
+        switch (item.getItemId()) {
+            case R.id.logoutBtn:
+                onLogout();
+                break;
+            case R.id.profileBtn:
+                onProfile();
+                break;
+            case R.id.contactBtn:
+                onContact();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    private void logout() {
+    private void onLogout() {
         Intent intent = new Intent(GroceriesActivity.this, LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+        Toast.makeText(this,"You're logged out", Toast.LENGTH_LONG).show();
         finish();
-
     }
-
-    private void profile() {
-        Intent intent1 = new Intent(GroceriesActivity.this, ProfileActivity.class);
-        startActivity(intent1);
+    private void onProfile() {
+        Intent intent = new Intent(GroceriesActivity.this, ProfileActivity.class);
+        startActivity(intent);
     }
-
-    private void contact() {
-        Intent intent2 = new Intent(GroceriesActivity.this, ContactActivity.class);
-        startActivity(intent2);
+    private void onContact() {
+        Intent intent = new Intent(GroceriesActivity.this, ContactActivity.class);
+        startActivity(intent);
     }
 }

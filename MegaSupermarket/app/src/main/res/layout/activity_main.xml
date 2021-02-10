@@ -6,19 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/sloganTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="115dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Make your fresh choices below!"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_text"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTxt"
         app:srcCompat="@drawable/mega1" />
 
     <TextView
-        android:id="@+id/welcome_text"
+        android:id="@+id/welcomeTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
@@ -32,30 +46,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/welcome_text2"
+        android:id="@+id/cartTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="115dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Make your fresh choices below!"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-    <TextView
-        android:id="@+id/cart_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="246dp"
         android:layout_marginEnd="382dp"
         android:fontFamily="sans-serif-black"
         android:text="Cart"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -69,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cart_text">
+        app:layout_constraintTop_toBottomOf="@+id/cartTxt">
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -81,18 +82,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/cart_text2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/cart_button"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="sans-serif-black"
-                    android:text="My Cart"
-                    android:textSize="20dp" />
-
                 <ImageButton
-                    android:id="@+id/cart_button"
+                    android:id="@+id/myCartBtn"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
                     android:layout_centerHorizontal="true"
@@ -101,6 +92,16 @@
                     android:padding="0dp"
                     android:scaleType="centerInside"
                     app:srcCompat="@drawable/cart" />
+
+                <TextView
+                    android:id="@+id/myCartTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myCartBtn"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="sans-serif-black"
+                    android:text="My Cart"
+                    android:textSize="20dp" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -121,7 +122,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/categories_text"
+        android:id="@+id/categoriesTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -142,7 +143,7 @@
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categories_text">
+        app:layout_constraintTop_toBottomOf="@+id/categoriesTxt">
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -156,10 +157,10 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/groceries_text"
+                    android:id="@+id/groceriesTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/groceries_button"
+                    android:layout_below="@id/groceriesBtn"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:fontFamily="sans-serif-black"
@@ -167,7 +168,7 @@
                     android:textSize="20dp" />
 
                 <ImageButton
-                    android:id="@+id/groceries_button"
+                    android:id="@+id/groceriesBtn"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
                     android:layout_centerHorizontal="true"
@@ -189,19 +190,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/beverages_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/beverage_button"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="sans-serif-black"
-                    android:text="Beverages"
-                    android:textSize="20dp" />
-
                 <ImageButton
-                    android:id="@+id/beverage_button"
+                    android:id="@+id/beveragesBtn"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
                     android:layout_centerHorizontal="true"
@@ -210,6 +200,17 @@
                     android:padding="0dp"
                     android:scaleType="centerInside"
                     app:srcCompat="@drawable/beverage" />
+
+                <TextView
+                    android:id="@+id/beveragesTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/beveragesBtn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Beverages"
+                    android:textSize="20dp" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>

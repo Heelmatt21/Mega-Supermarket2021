@@ -14,12 +14,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
-private EditText Username;
-private EditText Password;
-private Button Login;
-private Button Register;
-private TextView Info;
-private CheckBox Showpassword;
+private EditText usernameTxt;
+private EditText passwordTxt;
+private Button loginBtn;
+private Button registerBtn;
+private TextView infoTextView;
+private CheckBox showPasswordChexkBox;
 
 
     @Override
@@ -27,30 +27,29 @@ private CheckBox Showpassword;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Username = (EditText)findViewById(R.id.username_text);
-        Password = (EditText)findViewById(R.id.password_text);
-        Login = (Button)findViewById(R.id.login_button);
-        Register = (Button)findViewById(R.id.register_button);
-        Showpassword = (CheckBox)findViewById(R.id.password_checkbox);
+        usernameTxt = (EditText)findViewById(R.id.usernameTxt);
+        passwordTxt = (EditText)findViewById(R.id.passwordTxt);
+        loginBtn = (Button)findViewById(R.id.loginBtn);
+        registerBtn = (Button)findViewById(R.id.registerBtn);
+        showPasswordChexkBox = (CheckBox)findViewById(R.id.showPaswCheckBox);
 
-        Login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                validate(Username.getText().toString(), Password.getText().toString());
-            }
-        });
-
-        Showpassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        showPasswordChexkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (!isChecked){
-                    Password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    passwordTxt.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 }else {
-                    Password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    passwordTxt.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                 }
             }
         });
-        Register.setOnClickListener(new View.OnClickListener() {
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                validate(usernameTxt.getText().toString(), passwordTxt.getText().toString());
+            }
+        });
+        registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentregister = new Intent(LoginActivity.this, RegisterActivity.class);
@@ -65,6 +64,6 @@ private CheckBox Showpassword;
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
         }
-        Login.setEnabled(true);
+        loginBtn.setEnabled(true);
     }
 }
